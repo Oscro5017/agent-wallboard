@@ -1,0 +1,70 @@
+{
+  "name": "agent-wallboard",
+  "version": "1.0.0",
+  "description": "Agent Wallboard Desktop App",
+  "main": "main.js",
+  "author": "Student Name <student@example.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac", 
+    "build-linux": "electron-builder --linux",
+    "build-all": "electron-builder --win --mac --linux"
+  },
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-updater": "^5.4.0"
+  },
+  "build": {
+    "appId": "com.student.agent-wallboard",
+    "productName": "Agent Wallboard",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "app.js",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      { "from": "assets", "to": "assets" }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "perMachine": false
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": "deb",
+      "icon": "build/icon.png"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Oscro5017",
+        "repo": "agent-wallboard"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+out/
+build/
+
+# Electron Builder outputs
+*.exe
+*.dmg
+*.AppImage
+*.snap
+*.msi
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+*.nupkg
+
+# Logs
+logs/
+*.log
+
+# VSCode settings
+.vscode/
